@@ -1,0 +1,35 @@
+//Fila encadeada
+
+
+Struct FE{
+	char dado;
+	struct FE *proximo;
+}
+Struct F_encadeada{
+	struct FE *inicio
+	struct FE *fim;
+}
+
+struct F_encadeada FILA_e;
+
+
+structFE incluir ( )
+P=(struct_FE)malloc(sizeof(struct_FE));
+if (P == NULL){
+	std::cout << "fila cheia" << std::cout;// esta caso, sem espaço em memoria fisica
+	return -1;
+}
+P->proximo = NULL;
+return P; // retorne o endereço do proximo endereço incluso na função.
+}
+
+int structFE incluir (struct FE* volta, char dado )
+P=(struct_FE)malloc(sizeof(struct_FE));
+if (P == NULL){
+	std::cout << "fila cheia" << std::cout;// esta caso, sem espaço em memoria fisica
+	return -1;
+}
+P->proximo = NULL;
+*volta = P; // retorne para uma variavel ja existente.
+return 0; 
+}

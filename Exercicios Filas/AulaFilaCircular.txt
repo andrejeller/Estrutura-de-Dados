@@ -1,0 +1,72 @@
+define max 16
+struct FL{
+	int tamanho;
+	char fila[max];
+	int inicio;
+	int fim;
+}
+
+FL fila_linear, 
+
+/////Linear
+
+int instroduzir_na_fila(FL* fila, char dado){
+	if (fila->tamanho == max){
+		std::cout << "fila cheia" << std::endl;	
+		return -1;
+	}
+	else {
+		fila->fila[fila->fim] = dado;
+		fila->fim++;
+		fila->tamanho++; // calcula quantos numeros ja foram inseridos
+	}
+	
+
+}
+
+int retirar_da_fila(FL* fila, char* dado){
+	if (fila->tamanho == 0){
+			std::cout << "fila esta vazia" << std::endl;
+			return -1;
+	}
+	else {
+		dado = fila->fila[inicio];
+		fila->inicio++;
+		return 0; //retorna 0 pois nao houve erro, o dado esta na variavel dado que foir recebida por paremetro, fora da função
+	}
+	
+
+}
+
+
+
+///// Circular ////
+
+int instroduzir_na_fila(FL* fila, char dado){
+	if (fila->tamanho == max){
+		std::cout << "fila cheia" << std::endl;	
+		return -1;
+	}
+	else {
+		fila->fila[fila->fim] = dado;
+		fila->fim = (fila->fim + 1) % max;
+		fila->tamanho++; // calcula quantos numeros ja foram inseridos
+	}
+	
+
+}
+
+int retirar_da_fila(FL* fila, char* dado){
+	if (fila->tamanho == 0){
+			std::cout << "fila esta vazia" << std::endl;
+			return -1;
+	}
+	else {
+		dado = fila->fila[inicio];
+		fila->inicio = (fila-> inicio + 1) % max;
+		fila->tamanho --;
+		return 0; //retorna 0 pois nao houve erro, o dado esta na variavel dado que foir recebida por paremetro, fora da função
+	}
+	
+
+}
